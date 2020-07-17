@@ -1,8 +1,8 @@
-const tap = require('tap')
-const FormData = require('form-data')
-const { build } = require('./build-server')
+import tap from 'tap'
+import FormData from 'form-data'
+import { build } from './build-server'
 
-tap.test('fastify-gql-upload - should work', async t => {
+tap.test('fastify-gql-upload - should work', async (t) => {
   const server = build()
   await server.ready()
 
@@ -15,10 +15,10 @@ tap.test('fastify-gql-upload - should work', async t => {
   `
   const operations = {
     query,
-    variables: { image: null }
+    variables: { image: null },
   }
 
-  const fileData = 'a'
+  const fileData = 'abcd'
   const uploadFilename = 'a.png'
 
   body.append('operations', JSON.stringify(operations))
@@ -29,7 +29,7 @@ tap.test('fastify-gql-upload - should work', async t => {
     method: 'POST',
     url: '/graphql',
     headers: body.getHeaders(),
-    body
+    payload: body,
   })
 
   t.equal(res.statusCode, 200)
@@ -38,7 +38,7 @@ tap.test('fastify-gql-upload - should work', async t => {
   await server.close()
 })
 
-tap.test('Normal gql query should work', async t => {
+tap.test('Normal gql query should work', async (t) => {
   const server = build()
   await server.ready()
 
@@ -47,22 +47,25 @@ tap.test('Normal gql query should work', async t => {
   const res = await server.inject({
     method: 'POST',
     url: '/graphql',
-    body: {
-      query
-    }
+    headers: {
+      'content-type': 'application/json',
+    },
+    payload: JSON.stringify({
+      query,
+    }),
   })
 
   t.equal(res.statusCode, 200)
   t.deepEqual(JSON.parse(res.body), {
     data: {
-      add: 4
-    }
+      add: 4,
+    },
   })
 
   await server.close()
 })
 
-tap.test('A normal http request to another route should work', async t => {
+tap.test('A normal http request to another route should work', async (t) => {
   const server = build()
   await server.ready()
   const res = await server.inject({ method: 'GET', url: '/' })
