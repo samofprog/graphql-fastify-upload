@@ -11,7 +11,7 @@ declare module 'fastify' {
 
 const mercuriusGQLUpload: FastifyPluginCallback<UploadOptions> = (
   fastify,
-  options = {},
+  options,
   done
 ) => {
   fastify.addContentTypeParser('multipart', (req, _payload, done) => {
