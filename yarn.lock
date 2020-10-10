@@ -367,10 +367,10 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.3.tgz#c893b73721db73699943bfc3653b1deb7faa4a3a"
   integrity sha512-Jus9s4CDbqwocc5pOAnh8ShfrnMcPHuJYzVcSUU7lrh8Ni5HuIqX3oilL86p3dlTrk0LzHRCgA/GQ7uNCw6l2Q==
 
-"@types/node@*", "@types/node@^14.11.5":
-  version "14.11.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.5.tgz#fecad41c041cae7f2404ad4b2d0742fdb628b305"
-  integrity sha512-jVFzDV6NTbrLMxm4xDSIW/gKnk8rQLF9wAzLWIOg+5nU6ACrIMndeBdXci0FGtqJbP9tQvm6V39eshc96TO2wQ==
+"@types/node@*", "@types/node@^14.11.8":
+  version "14.11.8"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.8.tgz#fe2012f2355e4ce08bca44aeb3abbb21cf88d33f"
+  integrity sha512-KPcKqKm5UKDkaYPTuXSx8wEP7vE9GnuaXIZKijwRYcePpZFDVuy2a57LarFKiORbHOuTOOwYzxVxcUzsh2P2Pw==
 
 "@types/prop-types@*":
   version "15.7.3"
@@ -1163,9 +1163,9 @@ fast-json-stringify@^1.13.0:
     string-similarity "^4.0.1"
 
 fast-json-stringify@^2.2.1:
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/fast-json-stringify/-/fast-json-stringify-2.2.7.tgz#3dba170451bfdfbe144f7a408f2c4f1bf413126a"
-  integrity sha512-XVCR/dQ6unMP7c39XUdnPoYPPnf1RqTZGL2mAnmrXDIkyF5MRJYd87nfCEmxrqhj7k61Yi35Aaeb2QlJlZU9fg==
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/fast-json-stringify/-/fast-json-stringify-2.2.8.tgz#6c6ff59bda09412c1ee462323eda2debe4446884"
+  integrity sha512-/ASLcFlk998wuzAqbbspt7038fHXM1mTYk5N2Il+tOSnfVuHBwkH5tRnTMaB45Adv+SeS4McFXvAFI1+7uEkXw==
   dependencies:
     ajv "^6.11.0"
     deepmerge "^4.2.2"
@@ -1209,9 +1209,9 @@ fastify-warning@^0.2.0:
   integrity sha512-s1EQguBw/9qtc1p/WTY4eq9WMRIACkj+HTcOIK1in4MV5aFaQC9ZCIt0dJ7pr5bIf4lPpHvAtP2ywpTNgs7hqw==
 
 fastify-websocket@^2.0.5:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/fastify-websocket/-/fastify-websocket-2.0.9.tgz#6bb0e3761507a3d4aad4def6cadeb0c62cdbeb11"
-  integrity sha512-Nzb8q94zDP29tWtNeJbm3ysr4lHeSADnStccueKxDTiILvbPlhG9knEsNHaTW5OsRRnkb4qp940NMb7BygR0pA==
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/fastify-websocket/-/fastify-websocket-2.0.10.tgz#759c41f20c4f3a29ff0b80ba523e7212b9e118dc"
+  integrity sha512-cESoKnOsq8DIeYOcnGQbRnNUqegXFUAkrEsVIu0vSyiVL2d1bJnsZo6LwA1W8P77fi2cYVodFBAm13gIY0k5Kg==
   dependencies:
     fastify-plugin "^2.3.4"
     find-my-way "^3.0.4"
@@ -2000,10 +2000,10 @@ make-error@^1.1.1:
   resolved "https://registry.yarnpkg.com/make-error/-/make-error-1.3.6.tgz#2eb2e37ea9b67c4891f684a1394799af484cf7a2"
   integrity sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==
 
-mercurius@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/mercurius/-/mercurius-6.0.0.tgz#be84bfbb51b7423080547de7cfc0292dec7e22f4"
-  integrity sha512-txocOnVv0UlmG3VbmzzRuRx+Ra8LM7vHzBQuYR0cj1bpsN1wkcMLvHjNW93UoJ9By+mK63gEvqwtXIhnFeqb8w==
+mercurius@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/mercurius/-/mercurius-6.1.0.tgz#b9ee001bac6b075eabde7ca3b1a12e91834be8fa"
+  integrity sha512-en24XCDMZg4Tk1AaQOLTYwJHyIOYuQp/NpxqWgT+VeR//YnocRICAqwgRCGzEfV8ogLG8LDD2beASj0+0vKHOg==
   dependencies:
     end-of-stream "^1.4.4"
     events.on "^1.0.1"
