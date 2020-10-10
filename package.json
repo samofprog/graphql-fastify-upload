@@ -12,13 +12,13 @@
     "files",
     "typescript"
   ],
-  "homepage": "https://github.com/PabloSzx/mercurius-upload#readme",
+  "homepage": "https://github.com/mercurius-js/mercurius-upload#readme",
   "bugs": {
-    "url": "https://github.com/PabloSzx/mercurius-upload/issues"
+    "url": "https://github.com/mercurius-js/mercurius-upload/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PabloSzx/mercurius-upload.git"
+    "url": "git+https://github.com/mercurius-js/mercurius-upload.git"
   },
   "license": "ISC",
   "author": "PabloSzx",
@@ -37,11 +37,11 @@
     "graphql-upload": "^11.0.0"
   },
   "devDependencies": {
-    "@types/node": "^14.11.5",
+    "@types/node": "^14.11.8",
     "@types/tap": "^14.10.1",
     "fastify": "^3.5.1",
     "form-data": "^3.0.0",
-    "mercurius": "^6.0.0",
+    "mercurius": "^6.1.0",
     "tap": "^14.10.8",
     "typescript": "^4.0.3"
   }
