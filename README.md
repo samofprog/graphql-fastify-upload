@@ -10,6 +10,8 @@ Plugin made for **Fastify v3**:
 yarn add mercurius-upload
 # or
 npm i mercurius-upload
+# or
+pnpm add mercurius-upload
 ```
 
 ## Usage
@@ -29,7 +31,9 @@ import MercuriusGQLUpload from 'mercurius-upload'
 
 // ...
 
-fastify.register(MercuriusGQLUpload)
+fastify.register(MercuriusGQLUpload, {
+  // options passed to processRequest from graphql-upload
+})
 ```
 
 ## Example
