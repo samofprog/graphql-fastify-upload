@@ -16,9 +16,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v1.2.1
-        with:
-          version: latest
+      - run: npm i -g pnpm
       - run: pnpm i
       - run: pnpm test
