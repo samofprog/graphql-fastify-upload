@@ -33,7 +33,7 @@ tap.test('mercurius-upload - should work', async (t) => {
   })
 
   t.equal(res.statusCode, 200)
-  t.deepEqual(JSON.parse(res.body), { data: { uploadImage: fileData } })
+  t.same(JSON.parse(res.body), { data: { uploadImage: fileData } })
 
   await server.close()
 })
@@ -56,7 +56,7 @@ tap.test('Normal gql query should work', async (t) => {
   })
 
   t.equal(res.statusCode, 200)
-  t.deepEqual(JSON.parse(res.body), {
+  t.same(JSON.parse(res.body), {
     data: {
       add: 4,
     },
@@ -70,8 +70,8 @@ tap.test('A normal http request to another route should work', async (t) => {
   await server.ready()
   const res = await server.inject({ method: 'GET', url: '/' })
 
-  t.strictEqual(res.statusCode, 200)
-  t.strictEqual(res.headers['content-type'], 'application/json; charset=utf-8')
-  t.deepEqual(JSON.parse(res.payload), { hello: 'world' })
+  t.same(res.statusCode, 200)
+  t.same(res.headers['content-type'], 'application/json; charset=utf-8')
+  t.same(JSON.parse(res.payload), { hello: 'world' })
   await server.close()
 })
