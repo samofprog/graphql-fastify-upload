@@ -30,7 +30,9 @@ const mercuriusGQLUpload: FastifyPluginCallback<UploadOptions> = (
   done()
 }
 
-export default fp(mercuriusGQLUpload, {
+export const mercuriusUpload = fp(mercuriusGQLUpload, {
   fastify: '>= 3.x',
   name: 'mercurius-upload',
 })
+
+export default mercuriusUpload
