@@ -1,6 +1,6 @@
 {
   "name": "mercurius-upload",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Fastify plugin to support GraphQL uploads using graphql-upload",
   "keywords": [
     "fastify",
