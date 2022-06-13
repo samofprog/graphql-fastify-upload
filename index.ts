@@ -1,5 +1,7 @@
 import fp from 'fastify-plugin'
-import processRequest, { ProcessRequestOptions } from 'graphql-upload/processRequest.js'
+import processRequest, {
+  ProcessRequestOptions,
+} from 'graphql-upload/processRequest.js'
 
 import type { FastifyPluginCallback } from 'fastify'
 
