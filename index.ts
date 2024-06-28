@@ -1,43 +1,70 @@
 import * as util from 'util'
-import stream from 'stream'
+import { finished } from 'stream'
 import fp from 'fastify-plugin'
-import { processRequest, UploadOptions } from 'graphql-upload-minimal'
+import { processRequest, UploadOptions } from 'graphql-upload-ts'
+import {
+  FastifyPluginCallback,
+  FastifyInstance,
+  FastifyRequest,
+  FastifyReply,
+} from 'fastify'
 
-const finishedStream = util.promisify(stream.finished)
-
-import type { FastifyPluginCallback } from 'fastify'
+const finishedStream = util.promisify(finished)
 
 declare module 'fastify' {
   interface FastifyRequest {
-    mercuriusUploadMultipart?: true
+    mercuriusUploadMultipart?: boolean
   }
 }
 
 const mercuriusGQLUpload: FastifyPluginCallback<UploadOptions> = (
-  fastify,
-  options,
-  done,
+  fastify: FastifyInstance,
+  options: UploadOptions,
+  done: () => void,
 ) => {
-  fastify.addContentTypeParser('multipart', (req, _payload, done) => {
-    req.mercuriusUploadMultipart = true
-    done(null)
-  })
+  fastify.addContentTypeParser(
+    'multipart',
+    (req: FastifyRequest, _payload: any, done: (err: Error | null) => void) => {
+      req.mercuriusUploadMultipart = true
+      done(null)
+    },
+  )
 
-  fastify.addHook('preValidation', async function (request, reply) {
-    if (!request.mercuriusUploadMultipart) {
-      return
-    }
+  fastify.addHook(
+    'preValidation',
+    async function (request: FastifyRequest, reply: FastifyReply) {
+      if (!request.mercuriusUploadMultipart) {
+        return
+      }
 
-    request.body = await processRequest(request.raw, reply.raw, options)
-  })
+      try {
+        request.body = await processRequest(request.raw, reply.raw, options)
+      } catch (error) {
+        reply.send(error)
+      }
+    },
+  )
 
-  fastify.addHook('onSend', async function (request) {
-    if (!request.mercuriusUploadMultipart) {
-      return
-    }
+  fastify.addHook(
+    'onSend',
+    async function (
+      request: FastifyRequest,
+      reply: FastifyReply,
+      payload: any,
+    ) {
+      if (!request.mercuriusUploadMultipart) {
+        return payload
+      }
 
-    await finishedStream(request.raw)
-  })
+      try {
+        await finishedStream(request.raw)
+      } catch (error) {
+        reply.send(error)
+      }
+
+      return payload
+    },
+  )
 
   done()
 }

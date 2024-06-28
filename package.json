@@ -1,7 +1,7 @@
 {
-  "name": "mercurius-upload",
-  "version": "7.0.0",
-  "description": "Fastify plugin to support GraphQL uploads using graphql-upload",
+  "name": "graphql-fastify-upload",
+  "version": "1.0.0",
+  "description": "graphql-upload-ts implementation plugin for Fastify & mercurius , fixed of poor implementation of the deepSet algorithm",
   "keywords": [
     "fastify",
     "mercurius",
@@ -12,16 +12,16 @@
     "files",
     "typescript"
   ],
-  "homepage": "https://github.com/mercurius-js/mercurius-upload#readme",
+  "homepage": "https://github.com/samofprog/graphql-fastify-upload#readme",
   "bugs": {
-    "url": "https://github.com/mercurius-js/mercurius-upload/issues"
+    "url": "https://github.com/samofprog/graphql-fastify-upload/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mercurius-js/mercurius-upload.git"
+    "url": "git+https://github.com/samofprog/graphql-fastify-upload.git"
   },
   "license": "ISC",
-  "author": "PabloSzx",
+  "author": "Samuel Assemien <sa.assemien@gmail.com>",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -33,18 +33,18 @@
   },
   "dependencies": {
     "fastify-plugin": "^4.2.0",
-    "graphql-upload-minimal": "^1.5.5"
+    "graphql-upload-ts": "^2.1.2"
   },
   "devDependencies": {
     "@types/node": "^20.5.0",
     "@types/tap": "^15.0.7",
     "cross-env": "^7.0.3",
-    "fastify": "^4.0.1",
+    "fastify": "^4.28.1",
     "form-data": "^4.0.0",
     "graphql": "^16.5.0",
-    "mercurius": "^13.0.0",
+    "mercurius": "^14.1.0",
     "prettier": "^3.0.0",
-    "tap": "^16.2.0",
+    "tap": "^20.0.2",
     "ts-node": "^10.8.1",
     "typescript": "^5.2.2"
   },
