@@ -1,17 +1,17 @@
-# mercurius-upload
+# graphql-fastify-upload
 
-[graphql-upload-minimal](https://github.com/flash-oss/graphql-upload-minimal) implementation plugin for [Fastify](https://www.fastify.io/) & [mercurius](https://github.com/mercurius-js/mercurius).
+[graphql-upload-ts](https://github.com/flash-oss/graphql-upload-minimal) implementation plugin for [Fastify](https://www.fastify.io/) & [mercurius](https://github.com/mercurius-js/mercurius).
 
-Plugin made for **Fastify v4**:
+Plugin made for **Fastify v4^**:
 
 ## Install
 
 ```sh
-yarn add mercurius-upload
+yarn add graphql-fastify-upload
 # or
-npm i mercurius-upload
+npm i graphql-fastify-upload
 # or
-pnpm add mercurius-upload
+pnpm add graphql-fastify-upload
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ pnpm add mercurius-upload
 Plugin options should conform to https://github.com/flash-oss/graphql-upload-minimal#type-processrequestoptions
 
 ```js
-fastify.register(require('mercurius-upload'), {
+fastify.register(require('graphql-fastify-upload'), {
   // options passed to processRequest from graphql-upload-minimal
   // maxFileSize: 1024 * 1024 * 5,
   // maxFiles: 1,
@@ -29,7 +29,7 @@ fastify.register(require('mercurius-upload'), {
 > or
 
 ```ts
-import MercuriusGQLUpload from 'mercurius-upload'
+import MercuriusGQLUpload from 'graphql-fastify-upload'
 
 // ...
 
@@ -42,7 +42,7 @@ fastify.register(MercuriusGQLUpload, {
 
 ```js
 const GQL = require('mercurius')
-const { GraphQLUpload } = require('graphql-upload-minimal')
+const { GraphQLUpload } = require('graphql-upload-ts')
 const fs = require('fs')
 const util = require('util')
 const stream = require('stream')
